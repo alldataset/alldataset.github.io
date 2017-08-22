@@ -9,10 +9,11 @@
         <style>
             
             .square {
-                width: 200px;
-                height: 200px;
-                background-color: blue;
-                display: inline-block;
+/*                width: 50px;*/
+/*                height: 50px;*/
+/*                background-color: blue;*/
+/*                display: inline-block;*/
+                margin: 1px;
             }
             
         </style>
@@ -55,26 +56,26 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script>
             links = [
-                'https://github.com/fivethirtyeight/data',
-                'https://github.com/BuzzFeedNews',
-                'https://opendata.socrata.com/',
-                'https://aws.amazon.com/pt/public-datasets/',
-                'https://cloud.google.com/bigquery/public-data/',
-                'https://en.wikipedia.org/wiki/Wikipedia:Database_download',
-                'https://www.kaggle.com/datasets',
-                'http://mlr.cs.umass.edu/ml/datasets.html',
-                'https://www.quandl.com/search?query=',
-                'https://data.world/',
-                'https://www.data.gov/',
-                'http://data.worldbank.org/',
-                'https://www.reddit.com/r/datasets/',
-                'http://academictorrents.com/browse.php?cat=6',
-                'https://dev.twitter.com/streaming/overview',
-                'https://developer.github.com/v3/',
-                'https://www.quantopian.com/',
-                'https://www.wunderground.com/weather/api/',
-                'https://data.opendatasoft.com/pages/home/',
-                'https://opendatainception.io/'
+                ['https://github.com/fivethirtyeight/data', "buzzfeed.png"],
+                ['https://github.com/BuzzFeedNews', "fivethirtyeight.png"],
+                ['https://opendata.socrata.com/', "buzzfeed.png"],
+                ['https://aws.amazon.com/pt/public-datasets/', "fivethirtyeight.png"],
+                ['https://cloud.google.com/bigquery/public-data/', "buzzfeed.png"],
+                ['https://en.wikipedia.org/wiki/Wikipedia:Database_download', "buzzfeed.png"],
+                ['https://www.kaggle.com/datasets', "buzzfeed.png"],
+                ['http://mlr.cs.umass.edu/ml/datasets.html', "buzzfeed.png"],
+                ['https://www.quandl.com/search?query=', "fivethirtyeight.png"],
+                ['https://data.world/', "buzzfeed.png"],
+                ['https://www.data.gov/', "buzzfeed.png"],
+                ['http://data.worldbank.org/', "buzzfeed.png"],
+                ['https://www.reddit.com/r/datasets/', "buzzfeed.png"],
+                ['http://academictorrents.com/browse.php?cat=6', "buzzfeed.png"],
+                ['https://dev.twitter.com/streaming/overview', "buzzfeed.png"],
+                ['https://developer.github.com/v3/', "buzzfeed.png"],
+                ['https://www.quantopian.com/', "buzzfeed.png"],
+                ['https://www.wunderground.com/weather/api/', "buzzfeed.png"],
+                ['https://data.opendatasoft.com/pages/home/', "buzzfeed.png"],
+                ['https://opendatainception.io/', "buzzfeed.png"]
             ]   
             
             d3.select("#hrefs").selectAll(".links")
@@ -88,18 +89,27 @@
             
             
             
-            var lgRow = null;
-            var smRow = null;
+            var row = d3.select("#squares")
+                .append("div")
+                .classed("row", true)
+                .classed("no-gutters", true)
+                .classed("align-items-center", true);
+//                .classed("row justify-content-around", true);
             
             for(var i=0; i < links.length; i++) {
-                if(i % 1000 == 0)
-                    lgRow = d3.select("#squares").append("div").classed("row", true);
                 
-                //if(i % 3 == 0)
-                    //smRow = d3.select("#squares").append("div").classed("row", true);
+                rowData = row.append("div")
+                    .attr("class", "col-lg-3 col-4");
+//                    .style("background-color", "yellow");
                 
-                lgRow.append("div").attr("class", "col-lg-3 col-4").style("background-color", "yellow").text(i);
-                //smRow.append("div").classed("col-sm-4", true).style("background-color", "yellow").text(links[i]);
+//                rowData.append("div")
+//                    .classed("square", true);
+                rowData.append("div")
+                    .classed("square", true)
+                    .append("img")
+                    .attr("src", "img/" + links[i][1])
+                    .attr("width", "100%");
+
             }
             
 

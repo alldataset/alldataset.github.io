@@ -56,8 +56,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script>
             links = [
-                ['https://github.com/fivethirtyeight/data', "buzzfeed.png"],
-                ['https://github.com/BuzzFeedNews', "fivethirtyeight.png"],
+                ['https://github.com/fivethirtyeight/data', "fivethirtyeight.png"],
+                ['https://github.com/BuzzFeedNews', "buzzfeed.png"],
                 ['https://opendata.socrata.com/', "buzzfeed.png"],
                 ['https://aws.amazon.com/pt/public-datasets/', "fivethirtyeight.png"],
                 ['https://cloud.google.com/bigquery/public-data/', "buzzfeed.png"],
@@ -107,7 +107,7 @@
                 rowData.append("div")
                     .classed("square", true)
                     .append("img")
-                    .attr("src", "img/" + links[i][1])
+                    .attr("src", links[i][1])
                     .attr("width", "100%");
 
             }

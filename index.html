@@ -25,6 +25,7 @@
 
         <div class="container">
             <div id="squares">
+<!--
                 <div class="square"></div>
                 <div class="square"></div>
                 <div class="square"></div>
@@ -37,6 +38,7 @@
                 <div class="square"></div>
                 <div class="square"></div>
                 <div class="square"></div>
+-->
                 
                 
             </div>
@@ -83,6 +85,23 @@
                 .append("a")
                 .attr("href", function(d){return d;})
                 .text(function(d){return d;});
+            
+            
+            
+            var lgRow = null;
+            var smRow = null;
+            
+            for(var i=0; i < links.length; i++) {
+                if(i % 1000 == 0)
+                    lgRow = d3.select("#squares").append("div").classed("row", true);
+                
+                //if(i % 3 == 0)
+                    //smRow = d3.select("#squares").append("div").classed("row", true);
+                
+                lgRow.append("div").attr("class", "col-lg-3 col-sm-4").style("background-color", "yellow").text(i);
+                //smRow.append("div").classed("col-sm-4", true).style("background-color", "yellow").text(links[i]);
+            }
+            
 
         </script>
     </body>

@@ -1,1 +1,60 @@
-teste
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <header>
+            
+        
+        </header>
+
+        <section>
+        
+        
+        
+        </section>
+        
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script>
+            links = [
+                'https://github.com/fivethirtyeight/data',
+                'https://github.com/BuzzFeedNews',
+                'https://opendata.socrata.com/',
+                'https://aws.amazon.com/pt/public-datasets/',
+                'https://cloud.google.com/bigquery/public-data/',
+                'https://en.wikipedia.org/wiki/Wikipedia:Database_download',
+                'https://www.kaggle.com/datasets',
+                'http://mlr.cs.umass.edu/ml/datasets.html',
+                'https://www.quandl.com/search?query=',
+                'https://data.world/',
+                'https://www.data.gov/',
+                'http://data.worldbank.org/',
+                'https://www.reddit.com/r/datasets/',
+                'http://academictorrents.com/browse.php?cat=6',
+                'https://dev.twitter.com/streaming/overview',
+                'https://developer.github.com/v3/',
+                'https://www.quantopian.com/',
+                'https://www.wunderground.com/weather/api/',
+                'https://data.opendatasoft.com/pages/home/',
+                'https://opendatainception.io/'
+            ]   
+            
+            d3.selectAll(".links")
+                .data(links)
+                .enter()
+                .append("div")
+                .classed("links", true)
+                .append("a")
+                .attr("href", function(d){return d;})
+                .text(function(d){return d;});
+
+        </script>
+    </body>
+</html>
